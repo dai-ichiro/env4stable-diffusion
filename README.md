@@ -64,6 +64,7 @@ jupyter-client==7.3.4
 jupyter-core==4.11.1
 jupyterlab-widgets==3.0.2
 kornia==0.6.0
+-e git+https://github.com/CompVis/stable-diffusion.git@69ae4b35e0a0f6ee1af8bb9a5d0016ccb27e36dc#egg=latent_diffusion
 Markdown==3.4.1
 MarkupSafe==2.1.1
 matplotlib-inline==0.1.6
