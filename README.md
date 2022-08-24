@@ -1,7 +1,7 @@
 # env4stable-diffusion
 https://github.com/CompVis/stable-diffusion
 
-## To install libraries
+## To install libraries(Python 3.8.x)
 ~~~
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -r https://raw.githubusercontent.com/dai-ichiro/env4stable-diffusion/main/requirements.txt
@@ -151,4 +151,10 @@ Werkzeug==2.2.2
 widgetsnbextension==4.0.2
 yarl==1.8.1
 zipp==3.8.1
+~~~
+
+## To install libraries(Python 3.9.x)
+~~~
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install -r https://raw.githubusercontent.com/dai-ichiro/env4stable-diffusion/main/requirements4py39.txt
 ~~~
