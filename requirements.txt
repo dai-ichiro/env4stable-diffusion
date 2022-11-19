@@ -15,6 +15,6 @@ torchmetrics==0.10.0
 kornia==0.6.7
 -e git+https://github.com/CompVis/taming-transformers.git@24268930bf1dce879235a7fddd0b2355b84d7ea6#egg=taming_transformers
 -e git+https://github.com/openai/CLIP.git@d50d76daa670286dd6cacf3bcd80b5e4823fc8e1#egg=clip
--e git+https://github.com/CompVis/stable-diffusion.git@69ae4b35e0a0f6ee1af8bb9a5d0016ccb27e36dc#egg=latent_diffusion
+-e git+https://github.com/CompVis/stable-diffusion.git@21f890f9da3cfbeaba8e2ac3c425ee9e998d5229#egg=latent_diffusion
 
 
