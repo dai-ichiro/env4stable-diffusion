@@ -23,7 +23,6 @@ invisible-watermark==0.1.5
 lightning-utilities==0.3.0
 mpmath==1.2.1
 multidict==6.0.2
-ninja==1.11.1
 numpy==1.23.5
 omegaconf==2.2.3
 onnx==1.12.0
