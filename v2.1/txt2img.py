@@ -91,7 +91,7 @@ def parse_args():
     parser.add_argument(
         "--n_iter",
         type=int,
-        default=3,
+        default=3,  
         help="sample this often",
     )
     parser.add_argument(
@@ -121,15 +121,17 @@ def parse_args():
     parser.add_argument(
         "--n_samples",
         type=int,
-        default=2,  # 2 <- 3
+        default=2,  # 2 <- 3  
         help="how many samples to produce for each given prompt. A.k.a batch size",
     )
+    '''
     parser.add_argument(
         "--n_rows",
         type=int,
         default=0,
         help="rows in the grid (default: n_samples)",
     )
+    '''
     parser.add_argument(
         "--scale",
         type=float,
@@ -209,7 +211,7 @@ def main(opt):
     wm_encoder.set_watermark('bytes', wm.encode('utf-8'))
 
     batch_size = opt.n_samples
-    n_rows = opt.n_rows if opt.n_rows > 0 else batch_size
+    #n_rows = opt.n_rows if opt.n_rows > 0 else batch_size
     if not opt.from_file:
         prompt = opt.prompt
         assert prompt is not None
@@ -226,7 +228,7 @@ def main(opt):
     os.makedirs(sample_path, exist_ok=True)
     sample_count = 0
     base_count = len(os.listdir(sample_path))
-    grid_count = len(os.listdir(outpath)) - 1
+    #grid_count = len(os.listdir(outpath)) - 1
 
     start_code = None
     if opt.fixed_code:
