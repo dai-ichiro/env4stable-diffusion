@@ -144,6 +144,11 @@ def parse_args():
         help="if specified, load prompts from this file, separated by newlines",
     )
     parser.add_argument(
+        "--negative-prompt-file",
+        type=str,
+        help="if specified, load prompts from this file, separated by newlines",
+    )
+    parser.add_argument(
         "--config",
         type=str,
         default="configs/stable-diffusion/v2-inference-v.yaml", # "configs/stable-diffusion/v2-inference-v.yaml" <- "configs/stable-diffusion/v2-inference.yaml"
@@ -225,6 +230,14 @@ def main(opt):
             data = [batch_size * [data]]
             #data = [p for p in data for i in range(opt.repeat)]
             #data = list(chunk(data, batch_size))
+    
+    if opt.negative_prompt_file:
+        print(f"reading negative prompts from {opt.negative_prompt_file}")
+        with open(opt.negative_prompt_file, "r") as f:
+            negative_data = f.read().splitlines()
+            negative_data = ['.'.join(negative_data)]
+    else:
+        negative_data = [""]
 
     sample_path = os.path.join(outpath, "samples")
     os.makedirs(sample_path, exist_ok=True)
@@ -245,7 +258,7 @@ def main(opt):
                 for prompts in tqdm(data, desc="data"):
                     uc = None
                     if opt.scale != 1.0:
-                        uc = model.get_learned_conditioning(batch_size * [""])
+                        uc = model.get_learned_conditioning(batch_size * negative_data)
                     if isinstance(prompts, tuple):
                         prompts = list(prompts)
                     c = model.get_learned_conditioning(prompts)
