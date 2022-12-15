@@ -6,8 +6,10 @@ https://github.com/CompVis/stable-diffusion
 https://touch-sp.hatenablog.com/entry/2022/08/23/222916
 
 https://touch-sp.hatenablog.com/entry/2022/08/29/230522
-
+## Optimized Stable Diffusion
 https://touch-sp.hatenablog.com/entry/2022/10/11/145610
+https://touch-sp.hatenablog.com/entry/2022/12/15/182033
+
 ### version 2.0
 https://touch-sp.hatenablog.com/entry/2022/11/26/125636
 
