@@ -17,13 +17,31 @@ parser.add_argument(
     default=5,
     help='how many samples to produce for each given prompt',
 )
+parser.add_argument(
+    '--negative_prompt',
+    action="store_true",
+    help='if enabled, use negative prompt',
+)
 opt = parser.parse_args()
 
-#prompt = "anime of tsundere moe kawaii beautiful girl"
-prompt = 'anime of tsundere moe kawaii beautiful girl'
-negative_prompt = None
-#negative_prompt = "red eyes red hair"
-#num_images_per_prompt = 5
+if os.path.isfile('prompt.txt'):
+    print('reading prompts from prompt.txt')
+    with open('prompt.txt', 'r') as f:
+        prompt = f.read().splitlines()
+        prompt = ','.join(prompt)
+else:
+    prompt = 'anime of tsundere moe kawaii beautiful girl'
+
+if opt.negative_prompt and os.path.isfile('negative_prompt.txt'):
+    print('reading negative prompts from negative_prompt.txt')
+    with open('negative_prompt.txt', 'r') as f:
+        negative_prompt = f.read().splitlines()
+        negative_prompt = ','.join(negative_prompt)
+else:
+    negative_prompt = None
+
+print(f'prompt: {prompt}')
+print(f'negative prompt: {negative_prompt}')
 
 model_id = "./stable-diffusion-2-1-base"
 
