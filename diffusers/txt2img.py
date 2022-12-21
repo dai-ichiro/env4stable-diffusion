@@ -46,7 +46,6 @@ print(f'negative prompt: {negative_prompt}')
 
 model_id = "./stable-diffusion-2-1-base"
 
-
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
 pipe = pipe.to("cuda")
@@ -54,7 +53,10 @@ pipe.enable_attention_slicing()
 
 os.makedirs('results', exist_ok=True)
 
-for i in range(opt.n_sample):
+now = datetime.datetime.today()
+now_str = now.strftime('%m%d_%H%M')
+
+for i in range(opt.n_samples):
     seed  = opt.seed + i
     generator = torch.Generator(device="cuda").manual_seed(seed)
     image = pipe(
@@ -62,11 +64,6 @@ for i in range(opt.n_sample):
         negative_prompt = negative_prompt,
         generator = generator,
         num_images_per_prompt = 1).images[0]
-
-
-    now = datetime.datetime.today()
-    now_str = now.strftime('%m%d_%H%M')
-    for i, image in enumerate(images):
-        image.save(os.path.join('results', f'{now_str}_{i}_seed{seed}.png'))
+    image.save(os.path.join('results', f'{now_str}_seed{seed}.png'))
 
 
