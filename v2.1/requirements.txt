@@ -50,7 +50,7 @@ transformers==4.19.2
 typing_extensions==4.4.0
 urllib3==1.26.13
 wcwidth==0.2.5
-xformers==0.0.16rc402
+xformers==0.0.16rc404
 yarl==1.8.1
 zipp==3.11.0
 -e git+https://github.com/Stability-AI/stablediffusion.git@c12d960d1ee4f9134c2516862ef991ec52d3f59e#egg=stable_diffusion
