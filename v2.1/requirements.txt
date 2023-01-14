@@ -38,7 +38,7 @@ pytorch-lightning==1.8.3.post1
 PyWavelets==1.4.1
 PyYAML==6.0
 regex==2022.10.31
-requests==2.28.1
+requests==2.28.2
 six==1.16.0
 sympy==1.11.1
 tensorboardX==2.5.1
