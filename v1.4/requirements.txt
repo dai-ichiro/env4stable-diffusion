@@ -1,0 +1,20 @@
+albumentations==1.3.0
+diffusers==0.4.1
+pudb==2022.1.2
+invisible-watermark==0.1.5
+imageio==2.22.1
+imageio-ffmpeg==0.4.7
+pytorch-lightning==1.7.7
+omegaconf==2.2.3
+test-tube==0.7.5
+streamlit==1.12.0
+einops==0.5.0
+torch-fidelity==0.3.0
+transformers==4.22.2
+torchmetrics==0.10.0
+kornia==0.6.7
+-e git+https://github.com/CompVis/taming-transformers.git@24268930bf1dce879235a7fddd0b2355b84d7ea6#egg=taming_transformers
+-e git+https://github.com/openai/CLIP.git@d50d76daa670286dd6cacf3bcd80b5e4823fc8e1#egg=clip
+-e git+https://github.com/CompVis/stable-diffusion.git@21f890f9da3cfbeaba8e2ac3c425ee9e998d5229#egg=latent_diffusion
+
+
